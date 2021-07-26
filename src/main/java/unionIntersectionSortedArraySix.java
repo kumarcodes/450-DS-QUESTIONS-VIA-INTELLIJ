@@ -16,26 +16,31 @@ public class unionIntersectionSortedArraySix {
         for (int i=0;i<n2;i++){
             arr2[i]=sc.nextInt();
         }
-        int temp=n1+n2;
-        int arrunion[]=new int[temp];
-        int j=0,k=0;
-        for(int i=0;i<temp;i++){
-            if(arr1[i]<arr2[i]){
-                arrunion[i]=arr1[i];
+        int j=0,k=0,i=0;
+        int m=0;
+        while(j<n1 && k<n2){
+            if(arr1[j]<arr2[k]){
+               System.out.println(arr1[j]);
                 j++;
             }
-            else if(arr1[i]>arr2[i]){
-                arrunion[i]=arr2[i];
+            else if(arr1[j]>arr2[k]){
+                System.out.println(arr2[k]);
                 k++;
             }
             else{
-                arrunion[i]=arr1[i];
+                System.out.println(arr1[j]);
                 j++; k++;
+
             }
         }
-        for(int i=0;i<n1+n2;i++){
-            System.out.println(arrunion[i]);
+        while (j<n1){
+            System.out.println(arr1[j++]);
         }
+        while (k<n2){
+            System.out.println(arr2[k++]);
+        }
+
+
 
     }
 }
