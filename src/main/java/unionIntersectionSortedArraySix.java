@@ -39,6 +39,23 @@ public class unionIntersectionSortedArraySix {
         while (k<n2){
             System.out.println(arr2[k++]);
         }
+        j=0;
+        k=0;
+        while(j<n1 && k<n2){
+            if(arr1[j]==arr2[k]){
+                System.out.println(arr1[j]);
+                j++;
+            }
+            else if(arr1[j]>arr2[k]){
+
+                k++;
+            }
+            else{
+
+                j++; k++;
+
+            }
+        }
 
 
 
