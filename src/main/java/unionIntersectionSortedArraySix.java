@@ -18,33 +18,36 @@ public class unionIntersectionSortedArraySix {
         }
         int j=0,k=0,i=0;
         int m=0;
+        System.out.println("UNION");
         while(j<n1 && k<n2){
             if(arr1[j]<arr2[k]){
-               System.out.println(arr1[j]);
+               System.out.print(arr1[j]+" ");
                 j++;
             }
             else if(arr1[j]>arr2[k]){
-                System.out.println(arr2[k]);
+                System.out.print(arr2[k]+" ");
                 k++;
             }
             else{
-                System.out.println(arr1[j]);
+                System.out.print(arr1[j]+" ");
                 j++; k++;
 
             }
         }
         while (j<n1){
-            System.out.println(arr1[j++]);
+            System.out.print(arr1[j++]+" ");
         }
         while (k<n2){
-            System.out.println(arr2[k++]);
+            System.out.print(arr2[k++]+" ");
         }
         j=0;
         k=0;
+
+        System.out.println(System.lineSeparator()+"INTERSECTION");
         while(j<n1 && k<n2){
             if(arr1[j]==arr2[k]){
-                System.out.println(arr1[j]);
-                j++;
+                System.out.print(arr1[j++]+" ");
+                k++;
             }
             else if(arr1[j]>arr2[k]){
 
@@ -52,7 +55,7 @@ public class unionIntersectionSortedArraySix {
             }
             else{
 
-                j++; k++;
+                j++;
 
             }
         }
