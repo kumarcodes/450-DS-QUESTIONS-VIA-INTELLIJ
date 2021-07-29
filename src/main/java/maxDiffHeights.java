@@ -11,23 +11,28 @@ public class maxDiffHeights {
         for (int i=0;i<n;i++){
             arr[i]=sc.nextInt();
         }
-        for (int i=1;i<n;i++){
-            if(arr[i-1]<arr[i]){
-                arr[i-1]=k+arr[i-1];
+        int ans=arr[n-1]-arr[0];
+        int small=arr[0]+k;
+        int big=arr[n-1]-k;
+        int temp=0;
+        if (small>big){
+            temp=small;
+            small=big;
+            big=temp;
+        }
+        for(int i=1;i<n-1;i++){
+            int add=arr[i]-k;
+            int sub=arr[i]+k;
+            if(add<=big || sub>=small){
+                continue;
             }
-            else{
-                arr[i]=arr[i]-k;
+            if(big-sub<=add-small){
+                small=sub;
+            }
+            else {
+                    big=add;
             }
         }
-        if(arr[n-1]<arr[n-2]){
-            arr[n-1]=arr[n-1]+k;
-        }
-        else{
-            arr[n-1]=arr[n-1]-k;
-        }
-        for (int i=0;i<n;i++){
-            System.out.println(arr[i]);
-        }
-
+        System.out.println(big-small);
     }
 }
